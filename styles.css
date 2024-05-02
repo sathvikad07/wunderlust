@@ -45,9 +45,6 @@ table {
 }
 
 :root{
-    /* font-size: 16px; */
-    --fonts: Montserrat, sans-serif;
-    --light-gray: #eaeaea;
     --med-gray: #555;
     --yellow: #F6D64A;
     --yellow: #F6D64A;
@@ -60,6 +57,10 @@ table {
     --black: #000000;
     --side-margins: 40px;
 }
+
+* {
+    line-height: 150%;
+}
 h1 {
     font-size: 2.125rem;
     font-weight: bold;
@@ -69,31 +70,34 @@ h2 {
     font-weight: bold;
 }
 h3 {
-    font-size: 1.5rem;
+    font-size: 1.875rem;
     font-weight: bold;
+    line-height: 150%;
 }
+
+h3 > span {
+    font-size: 12px;
+    font-weight: normal;
+}
+
 h4 {
     font-size: 1.25rem;
     font-weight: bold;
 }
 
 h1, h2, h3 {
-    font-family: 'Molle';
+    font-family: 'Molle', sans-serif;
     font-style: italic;
 }
 
-h4, p, q, small, nav, button, form {
-    font-family: 'Montserrat';
+h4, p, q, small, nav, button, form, span {
+    font-family: 'Montserrat', sans-serif;
 }
 
-/* TEST */
-/* Header adjustments for proper alignment */
-body {
-    line-height: 150%;
-}
 nav {
     display: none;
 }
+
 #skip {
     background: #e77e23;
     height: 30px;
@@ -114,6 +118,14 @@ header h1, header p {
     padding: 0px var(--side-margins);
 }
 
+q::before {
+    content: "“";
+}
+
+q::after {
+    content: "”";
+}
+
 main {
     padding-top: 50px;
 }
@@ -124,7 +136,7 @@ main #intro {
     gap: 10px
 }
 
-main h2, main p {
+#intro > h2, #intro > p {
     padding-left: var(--side-margins);
     padding-right: var(--side-margins)
 }
@@ -149,19 +161,45 @@ article {
     display: grid;
     grid-template-columns: 1fr;
     gap: 20px;
+    padding: 20px var(--side-margins);
 }
 
-#plan h3, #plan p, #about h3, #about p, #testimonials h3, #testimonials p, #contact h3, #contact p {
-    padding-top: 20px;
-    padding-left: var(--side-margins);
-    padding-right: var(--side-margins)
-}
-
-#plan div, #about div, #testimonials div, #contact div {
+#plan div, #about div, #testimonials div {
     display: grid;
     grid-template-columns: 1fr;
     gap: 20px;
     justify-items: center;
+}
+
+div > section {
+    margin: auto;
+    width: 75%;
+}
+
+div > section > * {
+    display: inline-block;
+    margin: auto;
+    width: 100%;
+    text-align: center;
+}
+
+#plan > div > section {
+    width: 80%;
+    padding: 20px;
+    background-color: var(--teal);
+    border-radius: 8px;
+    border: 2px solid var(--white);
+}
+
+#plan > div > section > * {
+    display: block;
+    margin-top: 10px;
+    text-transform: uppercase;
+}
+
+#testimonials > div > section > img {
+    display: block;
+    width: 60%;
 }
 
 #about div {
@@ -173,6 +211,89 @@ article {
     background-color: var(--yellow);
 }
 
+#contact div {
+    display: grid;
+    grid-template-columns: 1fr;
+    justify-items: left; 
+}
+
+#contact label, #contact legend {
+    font-weight: 600;
+    text-transform: uppercase;
+    display: block;
+}
+
+#contact label span {
+    font-weight: normal;
+    text-transform: none;
+}
+
+#contact .custom-select {
+    width: 100%;
+}
+#contact input, #contact select {
+    width: 100%;
+    margin-bottom: 10px;
+    border: 2px solid var(--purple);
+    padding: 10px;
+}
+
+#contact input {
+    height: 30px;
+}
+
+#contact input[type="radio"] {
+    display: inline-block;
+    appearance: none;
+    width: 30px;
+    height: 30px;
+    outline: 0.1em solid var(--purple);
+    padding: 0.4em;
+    border-radius: 50%;
+    border: .4em solid white;
+    margin-bottom: 0px;
+}
+
+#contact input[type="radio"]:checked {
+    background-color: var(--purple);
+}
+
+#contact fieldset label {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+}
+
+#contact #nums span {
+    display: inline-block;
+}
+
+#contact input#mySubmit {
+    text-transform: uppercase;
+    height: 50px;
+    color: var(--white);
+    background-color: var(--purple);
+}
+
+#contact fieldset input {
+    width: unset;
+}
+
 #about {
     background-color: var(--blue);
+}
+
+footer {
+    background-color: var(--light-gray);
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 20px;
+    justify-content: center;
+    justify-items: center;
+    padding: 20px var(--side-margins);
+}
+
+footer a {
+    text-decoration: none;
+    color: var(--black);
 }
