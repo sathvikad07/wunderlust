@@ -45,7 +45,7 @@ table {
 }
 
 :root{
-    font-size: 16px;
+    /* font-size: 16px; */
     --fonts: Montserrat, sans-serif;
     --light-gray: #eaeaea;
     --med-gray: #555;
@@ -58,8 +58,23 @@ table {
     --light-gray: #EAEAEA;
     --white: #FFFFFF;
     --black: #000000;
-    --molle: Molle;
-    --montserrat: Montserrat;
+    --side-margins: 40px;
+}
+h1 {
+    font-size: 2.125rem;
+    font-weight: bold;
+}
+h2 {
+    font-size: 1.875rem;
+    font-weight: bold;
+}
+h3 {
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+h4 {
+    font-size: 1.25rem;
+    font-weight: bold;
 }
 
 h1, h2, h3 {
@@ -71,3 +86,93 @@ h4, p, q, small, nav, button, form {
     font-family: 'Montserrat';
 }
 
+/* TEST */
+/* Header adjustments for proper alignment */
+body {
+    line-height: 150%;
+}
+nav {
+    display: none;
+}
+#skip {
+    background: #e77e23;
+    height: 30px;
+    left: 50%;
+    padding: 8px;
+    position: absolute;
+    transform: translateY(-100%);
+    transition: transform 0.3s;
+}
+
+header {
+    display: grid;
+    grid-template-columns: 1fr;
+    background-image: linear-gradient(var(--blue), white) ;
+}
+
+header h1, header p {
+    padding: 0px var(--side-margins);
+}
+
+main {
+    padding-top: 50px;
+}
+
+main #intro {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 10px
+}
+
+main h2, main p {
+    padding-left: var(--side-margins);
+    padding-right: var(--side-margins)
+}
+
+main #img-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 20px;
+    
+}
+main #img-grid img {
+    width: 100%;
+}
+
+article {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 40px;
+}
+
+#plan, #about, #testimonials, #contact {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 20px;
+}
+
+#plan h3, #plan p, #about h3, #about p, #testimonials h3, #testimonials p, #contact h3, #contact p {
+    padding-top: 20px;
+    padding-left: var(--side-margins);
+    padding-right: var(--side-margins)
+}
+
+#plan div, #about div, #testimonials div, #contact div {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 20px;
+    justify-items: center;
+}
+
+#about div {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+}
+
+#plan {
+    background-color: var(--yellow);
+}
+
+#about {
+    background-color: var(--blue);
+}
